@@ -29,15 +29,11 @@ class Person:
 
     name = property(save_name)
     
-    def get_job(self):
-        print("Getting job...")
-        return self.job
-    
-    def set_job(self, job):
+    def save_job(self, job):
         if (type(job) in (job, str)) and job in APPROVED_JOBS:
             self.job = job
         
         else:
             print("Job must be in list of approved jobs.")
             
-    job = property(get_job, set_job)
+    job = property(save_job)
